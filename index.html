@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TKA Bahasa Inggris Kelas XII | Discussion Text: Carbon Footprints & Decarbonization</title>
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          eco: {
+            50: '#f0fdf4',
+            100: '#dcfce7',
+            500: '#22c55e',
+            600: '#16a34a',
+            700: '#15803d',
+            800: '#166534',
+            900: '#14532d',
+          },
+          carbon: {
+            800: '#1e293b',
+            900: '#0f172a',
+            950: '#020617'
+          }
+        },
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          sci: ['"Space Grotesk"', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05);
+}
+.dark ::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.7);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+}
+.dark .glow-emerald {
+  box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.35);
+}
+
+.gradient-border-eco {
+  position: relative;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.6), rgba(6, 182, 212, 0.6), rgba(245, 158, 11, 0.6));
+  padding: 1.5px;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spinSlow 16s linear infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
+</head>
+
+<body class="bg-slate-50 dark:bg-carbon-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col antialiased">
+
+<header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3 cursor-pointer" onclick="showLandingCover()">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-amber-500 flex items-center justify-center text-white font-sci text-lg shadow-md shadow-emerald-500/20">
+        <i class="fa-solid fa-leaf animate-spin-slow"></i>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">TKA Bahasa Inggris XII</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium hidden sm:inline">SMA/MA Semester 2</span>
+        </div>
+        <h1 class="text-base sm:text-lg font-bold font-sci tracking-tight text-slate-900 dark:text-white leading-tight">
+          CBT: Discussion Text — Carbon Footprints & Decarbonization
+        </h1>
+      </div>
+    </div>
+
+    <!-- Quick Tool Controls -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Profile Cover Button -->
+      <button onclick="showLandingCover()" title="View Student Cover & Details" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center gap-1.5">
+        <i class="fa-solid fa-id-card text-emerald-500"></i>
+        <span class="hidden md:inline">Cover / Profile</span>
+      </button>
+
+      <!-- Exam vs Practice Mode Toggle -->
+      <button id="modeToggleBtn" title="Toggle Practice Mode (Shows Immediate Feedback)" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center gap-1.5">
+        <i class="fa-solid fa-graduation-cap text-cyan-500"></i>
+        <span id="modeLabel" class="hidden md:inline">Mode: Exam</span>
+      </button>
+
+      <!-- Font Controls -->
+      <div class="hidden sm:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-0.5 border border-slate-200 dark:border-slate-700">
+        <button id="fontDecBtn" class="px-2 py-1 text-xs text-slate-600 dark:text-slate-300 hover:text-emerald-500" title="Decrease Font Size">A-</button>
+        <span class="text-[10px] text-slate-400 px-1">|</span>
+        <button id="fontIncBtn" class="px-2 py-1 text-xs text-slate-600 dark:text-slate-300 hover:text-emerald-500" title="Increase Font Size">A+</button>
+      </div>
+
+      <!-- Timer Display -->
+      <div class="flex items-center gap-2 bg-amber-500/10 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 px-3 py-1.5 rounded-lg border border-amber-500/30 text-xs font-mono font-bold">
+        <i class="fa-regular fa-clock"></i>
+        <span id="timerDisplay">90:00</span>
+      </div>
+
+      <!-- Dark Mode Switch -->
+      <button id="themeToggleBtn" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-amber-500 transition">
+        <i id="themeIcon" class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section id="landingCoverSection" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full transition-all duration-300">
+  
+  <div class="gradient-border-eco shadow-2xl overflow-hidden bg-slate-900 text-white">
+    <div class="relative p-6 sm:p-10 md:p-12 bg-gradient-to-br from-carbon-950 via-slate-900 to-emerald-950 rounded-[1.2rem]">
+      
+      <!-- Background Decorative Lights -->
+      <div class="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        
+        <!-- Left Hero Details -->
+        <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-bolt text-amber-400"></i> BANK SOAL & KUISIONER CBT TKA HOTS
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black font-sci tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 leading-tight">
+            BAHASA INGGRIS <br>
+            <span class="text-xl sm:text-2xl lg:text-3xl font-sans text-white font-bold">KELAS XII SMA / MA (90 MENIT)</span>
+          </h1>
+
+          <div class="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm text-slate-300 space-y-2">
+            <div class="font-bold text-amber-400 font-sci text-base flex items-center justify-center lg:justify-start gap-2">
+              <i class="fa-solid fa-earth-americas"></i> Discussion Text: Carbon Footprints & Decarbonization
+            </div>
+            <p class="leading-relaxed">
+              30 Soal HOTS (Higher Order Thinking Skills - Bloom C4 Analyzing, C5 Evaluating, C6 Creating) terbagi dalam 6 Teks Diskusi Komprehensif: Personal Allowance, Carbon Tax, EVs, Food Miles, Carbon Offsetting, & Nuclear Energy.
+            </p>
+          </div>
+
+          <!-- Feature Cards -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300 pt-1">
+            <div class="flex items-center gap-2 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/50">
+              <i class="fa-solid fa-stopwatch text-emerald-400 text-base"></i>
+              <span>Durasi 90 Menit</span>
+            </div>
+            <div class="flex items-center gap-2 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/50">
+              <i class="fa-solid fa-brain text-amber-400 text-base"></i>
+              <span>30 Soal HOTS (A-E)</span>
+            </div>
+            <div class="flex items-center gap-2 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/50 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-magnifying-glass-chart text-cyan-400 text-base"></i>
+              <span>Pembahasan Analitis</span>
+            </div>
+          </div>
+
+          <!-- Developer Branding Badge -->
+          <div class="flex items-center justify-center lg:justify-start gap-3 pt-2">
+            <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-slate-950 font-bold text-lg shadow-lg">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <div class="text-left text-xs">
+              <div class="text-emerald-400 font-mono font-semibold text-[10px] uppercase tracking-wider">Penyusun / Pengembang Soal</div>
+              <div class="text-sm font-bold text-white">Asep Subagja, S.Pd</div>
+              <div class="text-slate-400">SMAN 1 Ciracap, Kabupaten Sukabumi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Form Input -->
+        <div class="lg:col-span-5 bg-slate-900/90 backdrop-blur-xl p-6 sm:p-8 rounded-2xl border border-emerald-500/30 shadow-2xl space-y-5">
+          <div class="border-b border-slate-800 pb-3">
+            <h3 class="text-lg font-bold font-sci text-white flex items-center gap-2">
+              <i class="fa-solid fa-id-card-clip text-emerald-400"></i> Identitas Peserta Ujian
+            </h3>
+            <p class="text-xs text-slate-400">Silakan lengkapi data peserta sebelum memulai pengerjaan.</p>
+          </div>
+
+          <form id="studentDataForm" onsubmit="handleStartExam(event)" class="space-y-4 text-left">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Nama Lengkap Siswa</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-user"></i></span>
+                <input type="text" id="studentNameInput" required placeholder="Contoh: Muhammad Rizki" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-emerald-500 transition">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Kelas / Jurusan</label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-graduation-cap"></i></span>
+                  <input type="text" id="studentClassInput" required placeholder="XII MIPA 1" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-emerald-500 transition">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">NISN / No Peserta</label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-hashtag"></i></span>
+                  <input type="text" id="studentNisnInput" placeholder="006123456" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-emerald-500 transition">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Asal Sekolah</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-school"></i></span>
+                <input type="text" id="studentSchoolInput" required value="SMAN 1 Ciracap Sukabumi" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-emerald-500 transition">
+              </div>
+            </div>
+
+            <div class="pt-2 space-y-2">
+              <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-black text-sm uppercase tracking-wider transition shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-play-circle text-lg"></i> Mulai Ujian Sekarang (90 Min)
+              </button>
+              
+              <button type="button" onclick="startPracticeDirectly()" class="w-full py-2.5 px-4 rounded-xl border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-graduation-cap text-emerald-400"></i> Mode Latihan Interaktif (Practice Mode)
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<div id="topicNavBar" class="hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-3 px-4 sm:px-6 lg:px-8 shadow-sm">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs no-scrollbar w-full" id="topicPillsContainer">
+      <!-- Injected by JavaScript -->
+    </div>
+  </div>
+</div>
+
+<main id="examWorkspace" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    
+    <!-- LEFT PANEL: Discussion Text Reading Passage (6 Cols) -->
+    <section class="lg:col-span-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 shadow-sm sticky top-20 max-h-[80vh] flex flex-col">
+      <!-- Story Header -->
+      <div class="flex items-center justify-between gap-2 pb-4 border-b border-slate-100 dark:border-slate-800 flex-wrap">
+        <div class="flex items-center gap-2">
+          <span id="storyTag" class="px-2.5 py-1 text-xs font-bold rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+            Text 1 of 6
+          </span>
+          <span id="storyThemeBadge" class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+            Carbon Allowance
+          </span>
+        </div>
+        <div class="text-xs text-slate-400 font-mono">
+          Questions <span id="storyQRange" class="font-bold text-slate-700 dark:text-slate-200">1 - 5</span>
+        </div>
+      </div>
+
+      <!-- Passage Title & Content -->
+      <div id="storyTitle" class="text-lg sm:text-xl font-bold font-sci text-emerald-700 dark:text-emerald-400 mt-4 mb-3">
+        Text 1 — Personal Carbon Allowance vs Corporate Accountability
+      </div>
+
+      <div id="storyBody" class="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed space-y-3 overflow-y-auto pr-2 flex-1 font-sans text-justify">
+        <!-- Injected dynamically -->
+      </div>
+
+      <!-- Passage Footer Tools -->
+      <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+        <span><i class="fa-solid fa-book-open mr-1 text-emerald-500"></i> Read carefully before answering</span>
+        <button id="scrollToTopStory" class="hover:text-emerald-500 transition">Top <i class="fa-solid fa-arrow-up ml-1"></i></button>
+      </div>
+    </section>
+
+    <!-- RIGHT PANEL: Question Box & Navigation Matrix (6 Cols) -->
+    <section class="lg:col-span-6 space-y-6">
+      
+      <!-- QUESTION CARD -->
+      <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 shadow-md relative glow-emerald">
+        
+        <!-- Card Header -->
+        <div class="flex items-center justify-between gap-2 pb-4 border-b border-slate-100 dark:border-slate-800">
+          <div class="flex items-center gap-2">
+            <span id="qNumberBadge" class="w-8 h-8 rounded-lg bg-emerald-600 text-white font-bold font-mono text-sm flex items-center justify-center shadow">
+              Q1
+            </span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+              TKA HOTS Question
+            </span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <!-- Flag button -->
+            <button id="flagBtn" class="px-2.5 py-1 text-xs rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-amber-500 transition flex items-center gap-1">
+              <i class="fa-solid fa-bookmark"></i>
+              <span id="flagText" class="hidden sm:inline">Ragu-ragu</span>
+            </button>
+            
+            <span id="skillBadge" class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+              Implicit Assumption (C4/C5)
+            </span>
+          </div>
+        </div>
+
+        <!-- Question Prompt -->
+        <div id="qPrompt" class="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-100 my-4 leading-relaxed">
+          Prompt text goes here...
+        </div>
+
+        <!-- Options Container -->
+        <div id="qOptions" class="space-y-3 my-4">
+          <!-- Options A-E injected by JS -->
+        </div>
+
+        <!-- Practice Mode Instant Explanation -->
+        <div id="feedbackBox" class="hidden my-4 p-4 rounded-xl text-xs sm:text-sm leading-relaxed border">
+          <!-- Injected dynamically in Practice Mode -->
+        </div>
+
+        <!-- Question Navigation Buttons -->
+        <div class="flex items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <button id="prevQBtn" class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-xs sm:text-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed">
+            <i class="fa-solid fa-chevron-left"></i> Previous
+          </button>
+
+          <button id="nextQBtn" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg shadow-emerald-600/20">
+            Next <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+            <i class="fa-solid fa-grip text-emerald-500"></i> Palette Soal (1 - 30)
+          </h3>
+          <span id="answeredCount" class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">
+            0 / 30 Terjawab
+          </span>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+          <div id="progressBar" class="bg-gradient-to-r from-emerald-500 to-cyan-500 h-full w-0 transition-all duration-300"></div>
+        </div>
+
+        <!-- Matrix Buttons -->
+        <div id="paletteGrid" class="grid grid-cols-6 sm:grid-cols-10 gap-2 pt-2">
+          <!-- 30 Buttons generated by JS -->
+        </div>
+
+        <!-- Legend -->
+        <div class="flex flex-wrap items-center justify-center gap-4 text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800">
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-600 inline-block"></span> Posisi</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-teal-500 inline-block"></span> Terjawab</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-amber-500 inline-block"></span> Ragu-ragu</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-slate-200 dark:bg-slate-800 border inline-block"></span> Belum</span>
+        </div>
+
+        <!-- Finish Exam Button -->
+        <div class="pt-3">
+          <button id="finishTestBtn" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 via-emerald-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-extrabold text-sm uppercase tracking-wider transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane"></i> Selesaikan Ujian & Lihat Hasil
+          </button>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<div id="resultModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+  <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl space-y-6">
+    
+    <!-- Header -->
+    <div class="flex items-start justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+      <div>
+        <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+          Laporan Resmi Hasil Ujian TKA HOTS
+        </span>
+        <h2 class="text-2xl font-black font-sci text-slate-900 dark:text-white mt-2">
+          Hasil Ujian & Pembahasan Analitis
+        </h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          Siswa: <strong id="resStudentName" class="text-slate-800 dark:text-slate-200">-</strong> | 
+          Kelas: <span id="resStudentClass">-</span> | 
+          Sekolah: <span id="resStudentSchool">-</span>
+        </p>
+      </div>
+      <button id="closeModalBtn" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xl font-bold p-2">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Overview Score Metric Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 p-5 rounded-2xl text-center">
+        <div class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wider">Nilai Akhir (Skor)</div>
+        <div id="finalScoreVal" class="text-4xl sm:text-5xl font-extrabold font-sci text-emerald-600 dark:text-emerald-400 my-1">
+          0 / 30
+        </div>
+        <div id="finalPercentage" class="text-sm font-bold text-slate-600 dark:text-slate-300">0% Akurasi</div>
+      </div>
+
+      <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/30 p-5 rounded-2xl text-center">
+        <div class="text-xs text-amber-600 dark:text-amber-400 font-semibold uppercase tracking-wider">Tingkat Kemampuan HOTS</div>
+        <div id="gradeBadge" class="text-2xl font-black text-amber-600 dark:text-amber-300 my-2">
+          Grade: -
+        </div>
+        <div id="gradeDesc" class="text-xs text-slate-500 dark:text-slate-400">Lihat rincian di bawah</div>
+      </div>
+
+      <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 p-5 rounded-2xl text-center">
+        <div class="text-xs text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wider">Statistik Waktu</div>
+        <div id="timeTakenVal" class="text-xl font-bold text-slate-800 dark:text-slate-200 my-2">
+          00:00 Terpakai
+        </div>
+        <div id="answeredRatio" class="text-xs text-slate-500 dark:text-slate-400">30 Soal Dikerjakan</div>
+      </div>
+    </div>
+
+    <!-- Analytical Item Review Section -->
+    <div class="space-y-4">
+      <h3 class="text-base font-bold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center justify-between">
+        <span><i class="fa-solid fa-list-check text-emerald-500 mr-2"></i> Kunci Jawaban & Pembahasan Analitis Lengkap</span>
+        <span class="text-xs font-normal text-slate-500">30 Soal HOTS</span>
+      </h3>
+      <div id="reviewContainer" class="space-y-4 max-h-[380px] overflow-y-auto pr-2">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- Modal Footer Actions -->
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+      <div class="text-xs text-slate-500">
+        Pengembang: <strong>Asep Subagja, S.Pd</strong> (SMAN 1 Ciracap, Sukabumi)
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="printResultBtn" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-print"></i> Cetak / Simpan PDF
+        </button>
+        <button id="restartTestBtn" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-rotate-right"></i> Ulangi Ujian
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="customDialogModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4 text-center">
+    <div id="dialogIconContainer" class="w-12 h-12 rounded-full mx-auto flex items-center justify-center text-xl bg-amber-500/10 text-amber-500">
+      <i class="fa-solid fa-circle-question"></i>
+    </div>
+    <h3 id="dialogTitle" class="text-lg font-bold font-sci text-slate-900 dark:text-white">Konfirmasi</h3>
+    <p id="dialogMessage" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Apakah Anda yakin?</p>
+    <div id="dialogActions" class="flex items-center justify-center gap-3 pt-2">
+      <!-- Buttons injected dynamically -->
+    </div>
+  </div>
+</div>
+
+<footer class="mt-auto bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 text-center">
+  <div class="max-w-7xl mx-auto px-4 space-y-2">
+    <p class="font-sci text-emerald-400 font-semibold">TKA Bahasa Inggris Kelas XII SMA/MA • Discussion Text: Carbon Footprints & Decarbonization</p>
+    <p>Pengembang Soal: <strong>Asep Subagja, S.Pd</strong> — SMAN 1 Ciracap, Kabupaten Sukabumi</p>
+  </div>
+</footer>
+
+<script>
+const dataset = [
+  {
+    topicId: 1,
+    topicName: "Personal Carbon Allowance",
+    storyTitle: "Text 1 — Personal Carbon Allowance vs. Corporate Carbon Accountability",
+    storyParagraphs: [
+      "[Issue Statement] As climate change intensifies, environmental policymakers increasingly debate whether decarbonization should be driven by individual responsibility through Personal Carbon Allowances (PCAs) or through strict regulatory mandates on industrial corporations.",
+      "[Arguments For / Pro] Proponents of Personal Carbon Allowances argue that assigning every citizen an equal, tradable annual carbon quota fosters individual ecological accountability. By linking daily consumer decisions—such as personal transport, household heating, and dietary habits—directly to carbon expenditure, PCAs leverage market dynamics to incentivize low-carbon choices. High-emitting individuals are obliged to purchase extra credits from frugal consumers, creating a progressive economic transfer that rewards sustainable lifestyles.",
+      "[Arguments Against / Contra] Conversely, critics contend that placing the burden of decarbonization on private individuals misdirects accountability away from the true culprits: multi-national corporations and energy cartels. Opponents point out that individual carbon footprints were historically popularized by fossil fuel giants as a public relations strategy to evade corporate regulation. Furthermore, enforcing PCAs raises significant data privacy concerns and regressive social risks, as lower-income households in energy-inefficient housing may struggle to afford basic utilities without systemic infrastructure reforms.",
+      "[Conclusion / Recommendation] In conclusion, while Personal Carbon Allowances can raise individual environmental consciousness, relying on them as a primary strategy is inherently flawed. A balanced policy framework should prioritize aggressive corporate emissions caps and public green infrastructure investment, using individual carbon tracking only as a secondary educational instrument."
+    ],
+    questions: [
+      {
+        qNum: 1,
+        skill: "Implicit Assumption & Counter-argument Analysis (C4/C5)",
+        prompt: "What implicit assumption underlines the proponents' argument for Personal Carbon Allowances (PCAs)?",
+        options: [
+          "Corporations will voluntarily lower energy prices if citizens reduce individual consumption.",
+          "Individual consumer choices are sufficiently elastic to respond to market-based carbon incentives.",
+          "Low-income households naturally generate higher carbon footprints than affluent households.",
+          "Fossil fuel companies will fund the progressive economic transfers between citizens.",
+          "Public green infrastructure can only be financed through personal carbon trading revenues."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar adalah B. Proponen PCA mengasumsikan bahwa pilihan konsumen bersifat elastis (dapat berubah) jika dihubungkan dengan insentif ekonomi/kuota karbon. Opsi A dan D salah karena tidak didukung teks. Opsi C bertentangan dengan isi teks. Opsi E bukan asumsi utama proponen."
+      },
+      {
+        qNum: 2,
+        skill: "Author's Stance & Communicative Purpose (C5)",
+        prompt: "Which of the following best describes the author's overall communicative purpose in Text 1?",
+        options: [
+          "To advocate for the complete abolition of corporate carbon tracking in favor of household quotas.",
+          "To analyze opposing perspectives on decarbonization responsibility and recommend prioritizing corporate regulation.",
+          "To prove that individual carbon footprints are a completely harmless educational tool for energy companies.",
+          "To criticize low-income citizens for resisting market-based Personal Carbon Allowances.",
+          "To demand immediate international sanctions against fossil fuel exporting nations."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Tujuan teks diskusi ini adalah menganalisis dua sudut pandang (kontribusi individu vs korporasi) lalu memberikan rekomendasi di paragraf penutup untuk memprioritaskan regulasi korporasi."
+      },
+      {
+        qNum: 3,
+        skill: "Vocabulary & Terminology in Context (C4)",
+        prompt: "The phrase “progressive economic transfer” in Paragraph 2 refers to a financial dynamic in which ...",
+        options: [
+          "the government subsidizes fossil fuel companies to lower consumer utility prices.",
+          "wealthier, high-emitting individuals effectively transfer money to lower-emitting individuals by buying their unused carbon credits.",
+          "corporations pay flat taxes directly into international biodiversity preservation funds.",
+          "consumers earn tax deductions by purchasing electric vehicles from multi-national firms.",
+          "banks impose higher interest rates on households with energy-inefficient appliances."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Teks menjelaskan bahwa konsumen beremisi tinggi harus membeli sisa kuota dari konsumen hemat emisi, sehingga terjadi transfer dana yang progresif dari yang kaya/beremisi tinggi ke yang hemat."
+      },
+      {
+        qNum: 4,
+        skill: "Structural Paragraph Function (C4)",
+        prompt: "What is the structural function of Paragraph 3 in the context of the entire discussion?",
+        options: [
+          "It offers statistical evidence to corroborate the claims made in Paragraph 2.",
+          "It presents counter-arguments highlighting corporate deflection, privacy risks, and social inequality.",
+          "It proposes a mathematical model for calculating household carbon expenditures.",
+          "It details the historical background of energy cartels prior to climate regulations.",
+          "It refutes the conclusion offered in Paragraph 4 using empirical socio-economic data."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Paragraf 3 berfungsi menyampaikan argumen kontra (Arguments Against) yang memaparkan kelemahan PCA seperti pengalihan tanggung jawab korporasi, risiko privasi, dan ketimpangan sosial."
+      },
+      {
+        qNum: 5,
+        skill: "Policy Recommendation & Synthesis (C6)",
+        prompt: "Based on the text, which policy combination would most effectively align with the author's final recommendation?",
+        options: [
+          "Implementing strict corporate emissions caps while utilizing individual carbon tracking strictly for educational awareness.",
+          "Replacing all corporate taxes with mandatory Personal Carbon Allowances for low-income citizens.",
+          "Deregulating multi-national energy giants to stimulate investments in personal tracking apps.",
+          "Banning all public investments in green infrastructure to force consumers into market carbon trading.",
+          "Imposing financial penalties on frugal consumers who sell their carbon credits to wealthy buyers."
+        ],
+        correct: "A",
+        explanation: "Pembahasan Analitis: Jawaban benar A. Paragraf 4 merekomendasikan pembatasan emisi korporasi sebagai prioritas utama dan menggunakan pemantauan individu hanya sebagai sarana edukasi sekunder."
+      }
+    ]
+  },
+  {
+    topicId: 2,
+    topicName: "Industrial Carbon Taxation",
+    storyTitle: "Text 2 — Industrial Carbon Taxation: Economic Catalyst vs. Inflationary Risk",
+    storyParagraphs: [
+      "[Issue Statement] As governments worldwide strive to meet net-zero targets, the implementation of heavy industrial carbon taxes has emerged as one of the most hotly contested fiscal policies in environmental economics.",
+      "[Arguments For / Pro] Advocates of industrial carbon taxation argue that putting a direct price on greenhouse gas emissions internalizes the environmental costs of production. By levying taxes on carbon-intensive manufacturing, power generation, and chemical industries, governments create a strong financial incentive for firms to innovate and transition toward clean technology. Furthermore, revenues generated from carbon taxes can be recycled into green infrastructure subsidies or used to reduce income taxes, fostering a double-dividend economic model.",
+      "[Arguments Against / Contra] On the other hand, opponents contend that aggressive carbon taxation risks triggering severe cost-push inflation and economic carbon leakage. When industrial producers face high carbon levies, they frequently pass these operational costs down to consumers in the form of higher electricity, heating, and food prices. Additionally, critics warn that stringent domestic carbon taxes may drive energy-intensive industries to relocate their manufacturing facilities to countries with laxer environmental regulations, ultimately failing to reduce global emissions while causing domestic job losses.",
+      "[Conclusion / Recommendation] To synthesize these views, a carbon tax is a potent economic instrument, but its implementation requires meticulous policy design. Policymakers should implement Carbon Border Adjustment Mechanisms (CBAM) to prevent carbon leakage and utilize tax revenues to safeguard vulnerable consumers from inflationary shocks."
+    ],
+    questions: [
+      {
+        qNum: 6,
+        skill: "Implicit Assumption Analysis (C4/C5)",
+        prompt: "The 'double-dividend economic model' mentioned by advocates implicitly assumes that ...",
+        options: [
+          "carbon taxes will permanently eliminate the need for renewable energy subsidies.",
+          "taxing pollution can simultaneously curb environmental degradation and fund positive economic reforms.",
+          "industrial firms will choose to pay taxes rather than invest in clean technologies.",
+          "consumers will naturally reduce their demand for basic food items during inflationary cycles.",
+          "carbon border tariffs will automatically equalize international manufacturing costs."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Konsep 'double-dividend' mengasumsikan dua keuntungan sekaligus: mengurangi emisi pencemaran dan memanfaatkan pendapatan pajak untuk reformasi ekonomi (seperti subsidi energi bersih/pemotongan pajak pendapatan)."
+      },
+      {
+        qNum: 7,
+        skill: "Author's Tone & Stance (C5)",
+        prompt: "Which phrase best characterizes the author's tone toward industrial carbon taxation in Text 2?",
+        options: [
+          "Unconditionally hostile and dismissive",
+          "Pragmatic and analytically balanced",
+          "Naively optimistic and uncritical",
+          "Indifferent and disengaged",
+          "Sarcastic and speculative"
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Sikap/nada penulis bersifat pragmatis dan seimbang (analytically balanced) karena menyajikan argumen pro dan kontra secara objektif lalu menawarkan solusi CBAM."
+      },
+      {
+        qNum: 8,
+        skill: "Contextual Vocabulary (C4)",
+        prompt: "In Paragraph 3, the term “carbon leakage” most nearly means the phenomenon where ...",
+        options: [
+          "industrial factories accidentally spill toxic carbon compounds into local waterways.",
+          "businesses relocate production to foreign nations with lenient environmental laws to avoid domestic taxes.",
+          "underground carbon capture facilities release stored greenhouse gases back into the atmosphere.",
+          "consumers secretly buy fossil fuels through unmonitored underground markets.",
+          "greenhouse gases diffuse naturally across international geographical borders."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Dalam istilah ekonomi lingkungan, 'carbon leakage' merujuk pada perpindahan lokasi produksi industri ke negara lain yang hukum lingkungannya lebih longgar untuk menghindari pajak domestik."
+      },
+      {
+        qNum: 9,
+        skill: "Cause-and-Effect Relationship (C4)",
+        prompt: "According to critics in Paragraph 3, how does an industrial carbon tax directly cause cost-push inflation for everyday consumers?",
+        options: [
+          "By forcing banks to raise mortgage interest rates on domestic commercial properties.",
+          "By prompting manufacturers to pass their increased operational carbon expenses into retail prices.",
+          "By causing a shortage of currency in local economic markets through excessive government hoarding.",
+          "By obliging foreign countries to lower their export tariffs on green technology.",
+          "By reducing the wages of clean energy researchers in public universities."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Paragraf 3 secara langsung menyatakan bahwa produsen membebankan kenaikan biaya pajak karbon kepada konsumen dalam bentuk harga listrik, pemanas, dan makanan yang lebih tinggi."
+      },
+      {
+        qNum: 10,
+        skill: "Policy Recommendation Synthesis (C6)",
+        prompt: "Which measure does the author specifically recommend to neutralize the threat of 'carbon leakage'?",
+        options: [
+          "Abolishing all domestic clean energy subsidies.",
+          "Implementing a Carbon Border Adjustment Mechanism (CBAM).",
+          "Banning all industrial exports to developing countries.",
+          "Exempting energy-intensive industries from environmental audits.",
+          "Raising domestic income taxes on manufacturing workers."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Pada paragraf 4 (kesimpulan), penulis merekomendasikan penetapan Carbon Border Adjustment Mechanism (CBAM) untuk mencegah kebocoran karbon."
+      }
+    ]
+  },
+  {
+    topicId: 3,
+    topicName: "Electric Vehicle Transition",
+    storyTitle: "Text 3 — Electric Vehicle Transition: Zero-Emission Transport vs. Battery Supply Chain & Fossil Grid",
+    storyParagraphs: [
+      "[Issue Statement] The global automotive industry is undergoing a historic shift toward Electric Vehicles (EVs) as governments push to eliminate internal combustion engines. However, debates persist regarding whether EVs truly offer a net-zero transport solution under current global conditions.",
+      "[Arguments For / Pro] Supporters argue that EVs produce zero direct tailpipe emissions, significantly improving urban air quality and curbing greenhouse gases. When powered by renewable energy grids, EVs drastically lower lifetime carbon footprints compared to petrol vehicles. Furthermore, advancements in battery efficiency and regenerative braking make electric drivetrains fundamentally more energy-efficient than traditional fossil-fuel engines.",
+      "[Arguments Against / Contra] Skeptics, however, highlight the substantial 'embedded carbon' generated during EV manufacturing, particularly in lithium, cobalt, and nickel battery mining. Mining operations cause ecological destruction and rely on energy-intensive processing. More critically, in countries where electricity grids remain heavily dependent on coal and natural gas, charging EVs merely shifts carbon emissions from vehicle tailpipes to power plant smokestacks.",
+      "[Conclusion / Recommendation] In summary, EVs are an essential technological step, but they are not a silver bullet. To achieve genuine decarbonization, governments must rapidly green the national electricity grid and enforce ethical, low-carbon battery supply chains."
+    ],
+    questions: [
+      {
+        qNum: 11,
+        skill: "Counter-argument Analysis (C4/C5)",
+        prompt: "Which argument would a skeptic most likely use to counter the claim that EVs are 'zero-emission vehicles'?",
+        options: [
+          "EVs use regenerative braking systems that wear out roads faster than conventional brakes.",
+          "The extraction of battery minerals and reliance on fossil-fueled grids generate significant life-cycle carbon emissions.",
+          "Urban air quality deteriorates when electric vehicles replace traditional petrol automobiles.",
+          "Electric motors are inherently less energy-efficient than internal combustion engines.",
+          "Lithium batteries emit large amounts of carbon dioxide during daily vehicle operation."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Pihak skeptis berargumen bahwa penambangan mineral baterai dan ketergantungan pada pembangkit listrik berbahan bakar fosil menghasilkan emisi karbon signifikan dalam siklus hidup kendaraan listrik."
+      },
+      {
+        qNum: 12,
+        skill: "Author's Tone & Purpose (C5)",
+        prompt: "The main purpose of Text 3 is to evaluate the EV transition by ...",
+        options: [
+          "demonstrating that internal combustion engines are environmentally superior to EVs.",
+          "weighing tailpipe emission benefits against supply chain and grid carbon liabilities.",
+          "demanding an immediate global ban on lithium and cobalt mining operations.",
+          "arguing that public transit should completely replace private vehicle ownership.",
+          "proving that electric grids cannot be powered by renewable energy sources."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Tujuan utama Teks 3 adalah menimbang keuntungan emisi knalpot nol dibanding beban emisi dari rantai pasok baterai dan pembangkit listrik."
+      },
+      {
+        qNum: 13,
+        skill: "Contextual Vocabulary (C4)",
+        prompt: "The term “embedded carbon” in Paragraph 3 refers to ...",
+        options: [
+          "carbon emissions trapped inside the physical tires of an electric vehicle.",
+          "the greenhouse gas emissions released during the extraction, manufacturing, and transport of a product before its use.",
+          "carbon tax revenues embedded within government automotive subsidy budgets.",
+          "synthetic carbon fuels used to charge battery systems in rural areas.",
+          "the carbon dioxide absorbed by plants surrounding lithium mining zones."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. 'Embedded carbon' (karbon tertanam/terwujud) adalah total emisi gas rumah kaca yang dilepaskan selama proses ekstraksi bahan mentah, manufaktur, dan transportasi sebelum produk tersebut digunakan."
+      },
+      {
+        qNum: 14,
+        skill: "Cause-and-Effect Analysis (C4)",
+        prompt: "According to Paragraph 3, what happens when EVs are charged in regions with coal-dependent electricity grids?",
+        options: [
+          "The vehicle's battery lifespan is reduced by fifty percent.",
+          "Emissions are merely displaced from vehicle tailpipes to coal power plant smokestacks.",
+          "The cost of charging electric vehicles drops significantly below petrol prices.",
+          "Power plants automatically convert coal combustion into synthetic lithium.",
+          "Tailpipe emissions increase due to electricity feedback loops."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Jika jaringan listrik masih bergantung pada batu bara, pengisian daya EV hanya memindahkan lokasi emisi dari knalpot kendaraan ke cerobong asap pembangkit listrik."
+      },
+      {
+        qNum: 15,
+        skill: "Synthesis & Strategic Implication (C6)",
+        prompt: "To ensure the EV transition delivers maximum decarbonization, policymakers should prioritize ...",
+        options: [
+          "halting all production of electric vehicles until internal combustion engines disappear naturally.",
+          "decarbonizing national electricity grids alongside establishing sustainable battery supply chain standards.",
+          "banning renewable energy investments to focus exclusively on battery recycling plants.",
+          "increasing tariffs on electric vehicle imports to protect domestic coal mining facilities.",
+          "requiring EV drivers to pay higher road maintenance taxes than petrol car owners."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Berdasarkan kesimpulan teks, dekarbonisasi jaringan listrik nasional dan penetapan standar rantai pasok baterai yang berkelanjutan adalah kunci utama."
+      }
+    ]
+  },
+  {
+    topicId: 4,
+    topicName: "Food Miles & Agriculture",
+    storyTitle: "Text 4 — Food Miles & Local Sourcing vs. High-Yield Global Agriculture",
+    storyParagraphs: [
+      "[Issue Statement] The movement toward 'locavorism'—consuming locally produced food to minimize transport emissions ('food miles')—has gained immense popularity in eco-conscious consumer culture. However, agricultural economists dispute whether local food sourcing is genuinely more carbon-efficient than globalized agriculture.",
+      "[Arguments For / Pro] Advocates of local food sourcing emphasize that reducing long-distance freight, particularly air cargo and refrigerated trucking, directly slashes transport-related greenhouse gas emissions. Supporting local farms also strengthens regional food security, reduces single-use packaging waste, and fosters sustainable soil management practices among community smallholders.",
+      "[Arguments Against / Contra] Conversely, agricultural experts argue that food miles account for only a small fraction (around 5–10%) of total food-system emissions. The vast majority of emissions stem from farm-level production inputs, such as heating greenhouses, fertilizer synthesis, and land-use efficiency. Inefficient local farms in cold climates often require energy-intensive heated greenhouses, producing higher carbon footprints than importing food grown naturally in high-yield, warmer climates.",
+      "[Conclusion / Recommendation] Ultimately, prioritizing 'what you eat' over 'where it comes from' yields greater carbon savings. Policies should focus on promoting low-carbon dietary choices (such as plant-rich diets) and optimizing global agricultural production efficiency rather than fixating solely on geographical distance."
+    ],
+    questions: [
+      {
+        qNum: 16,
+        skill: "Implicit Assumption Analysis (C4/C5)",
+        prompt: "The 'locavore' movement's focus on food miles implicitly assumes that ...",
+        options: [
+          "transportation constitutes the primary source of greenhouse emissions in the global food lifecycle.",
+          "heated greenhouses consume less electricity than international container ships.",
+          "synthetic fertilizers contribute zero carbon emissions to global warming.",
+          "smallholder farms cannot produce fresh fruits during winter seasons.",
+          "globalized trade agreements automatically reduce agricultural production costs."
+        ],
+        correct: "A",
+        explanation: "Pembahasan Analitis: Jawaban benar A. Gerakan 'locavore' yang menekankan pemangkasan jarak tempuh makanan mengasumsikan secara tersirat bahwa transportasi adalah penyumbang utama emisi karbon dalam siklus makanan."
+      },
+      {
+        qNum: 17,
+        skill: "Author's Stance Evaluation (C5)",
+        prompt: "What is the author's primary perspective regarding 'locavorism' in Text 4?",
+        options: [
+          "It is the single most effective method for reversing global climate change.",
+          "It is well-intentioned but overemphasizes transportation distance over farm production emissions.",
+          "It should be legally enforced through high tariffs on imported agricultural goods.",
+          "It is environmentally harmful because local smallholders refuse to use modern fertilizers.",
+          "It is completely identical to high-yield global agriculture in terms of land use."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Penulis menilai gerakan locavore berhiat baik namun terlalu berlebihan menyoroti jarak transportasi ketimbang emisi dari proses produksi pertanian itu sendiri."
+      },
+      {
+        qNum: 18,
+        skill: "Contextual Vocabulary (C4)",
+        prompt: "The word “smallholders” in Paragraph 2 most nearly refers to ...",
+        options: [
+          "multi-national corporate managers in chemical industries.",
+          "small-scale farmers who cultivate limited land areas.",
+          "shipping agents specializing in refrigerated container cargo.",
+          "government officials enforcing agricultural import quotas.",
+          "consumers who buy small quantities of imported food items."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. 'Smallholders' adalah petani skala kecil yang mengolah lahan terbatas."
+      },
+      {
+        qNum: 19,
+        skill: "Cause-and-Effect Relationship (C4)",
+        prompt: "Why might locally grown tomatoes in a cold climate generate a higher carbon footprint than imported tomatoes grown naturally in a warm climate?",
+        options: [
+          "Because local farmers must pay higher carbon taxes on imported seeds.",
+          "Because heating greenhouses in cold climates requires massive energy input compared to warm-climate solar growth and shipping.",
+          "Because refrigerated container ships emit zero carbon during long-distance oceanic travel.",
+          "Because warm-climate soil absorbs all greenhouse gases generated by farm machinery.",
+          "Because local packaging regulations require heavy plastic containers."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Paragraf 3 menerangkan bahwa pemanasan rumah kaca di iklim dingin membutuhkan konsumsi energi sangat besar, melampaui emisi transportasi impor dari daerah hangat."
+      },
+      {
+        qNum: 20,
+        skill: "Policy Synthesis & Recommendation (C6)",
+        prompt: "Which dietary strategy aligns best with the author's final recommendation for effective food decarbonization?",
+        options: [
+          "Consuming locally grown beef raised in heated indoor facilities.",
+          "Shifting toward plant-rich diets grown efficiently, regardless of regional origin.",
+          "Importing all food items via air freight to support global trade networks.",
+          "Banning smallholder farming to force consumers into buying imported canned goods.",
+          "Requiring all farms to use synthetic nitrogen fertilizers exclusively."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Teks menyimpulkan bahwa memprioritaskan 'apa yang dimakan' (seperti pola makan kaya nabati) lebih berdampak besar ketimbang sekadar membatasi lokasi asal makanan."
+      }
+    ]
+  },
+  {
+    topicId: 5,
+    topicName: "Voluntary Carbon Offsetting",
+    storyTitle: "Text 5 — Voluntary Carbon Offsetting: Genuine Decarbonization vs. Corporate Greenwashing",
+    storyParagraphs: [
+      "[Issue Statement] Voluntary Carbon Offsetting (VCO) allows corporations and individuals to compensate for their greenhouse gas emissions by purchasing carbon credits from environmental projects, such as reforestation or renewable energy development.",
+      "[Arguments For / Pro] Proponents argue that carbon offsets channel crucial private capital into conservation projects in the Global South that would otherwise lack funding. Offsetting enables hard-to-abate sectors, like aviation and heavy shipping, to mitigate their climate impact while low-carbon technologies mature. Furthermore, high-quality offset initiatives provide co-benefits, including biodiversity preservation and local job creation.",
+      "[Arguments Against / Contra] Critics, however, denounce voluntary carbon offsetting as a dangerous license to pollute and a form of corporate 'greenwashing.' Many offset projects suffer from exaggerated carbon accounting, lack of permanence (e.g., reforested trees burning in wildfires), and leakage. More fundamentally, critics argue that purchasing cheap offsets allows fossil-fuel-intensive corporations to avoid making the necessary structural reductions in their core operations.",
+      "[Conclusion / Recommendation] In conclusion, carbon offsetting should never replace direct operational emission reductions. Offsetting must serve strictly as a secondary measure for residual, unavoidable emissions, governed by rigorous third-party auditing."
+    ],
+    questions: [
+      {
+        qNum: 21,
+        skill: "Implicit Assumption Analysis (C4/C5)",
+        prompt: "The criticism that offsetting acts as a 'license to pollute' implicitly assumes that corporations will ...",
+        options: [
+          "increase employee salaries rather than invest in third-party environmental audits.",
+          "use carbon credits to maintain high-emission business operations instead of decarbonizing core processes.",
+          "voluntarily shut down aviation and shipping routes to preserve forest biodiversity.",
+          "transfer all their carbon offset projects from the Global South to industrialized nations.",
+          "demand higher prices for clean energy technologies in maturing markets."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Kritikan 'lisensi untuk mencemari' mengasumsikan korporasi akan membeli kredit karbon murah agar dapat terus mempertahankan emisi operasional utama tanpa melakukan dekarbonisasi nyata."
+      },
+      {
+        qNum: 22,
+        skill: "Author's Communicative Purpose (C5)",
+        prompt: "What is the primary communicative purpose of Text 5?",
+        options: [
+          "To persuade airlines to replace all jet fuel with voluntary offset credits.",
+          "To analyze the legitimacy of voluntary carbon offsets and recommend strict limits on their usage.",
+          "To prove that reforestation projects in the Global South always fail due to wildfires.",
+          "To encourage consumers to purchase cheap carbon credits for daily car commutes.",
+          "To demand the complete deregulation of international carbon credit markets."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Tujuan teks ini adalah menganalisis keabsahan klaim offset karbon dan merekomendasikan pembatasan penggunaannya hanya untuk emisi sisa yang tak terselesaikan."
+      },
+      {
+        qNum: 23,
+        skill: "Contextual Vocabulary (C4)",
+        prompt: "The term “greenwashing” in Paragraph 3 refers to the practice of ...",
+        options: [
+          "washing industrial machinery with biodegradable eco-friendly detergents.",
+          "misleading consumers or the public into believing a company's products or policies are environmentally friendly.",
+          "planting synthetic trees along urban highways to absorb vehicular carbon dioxide.",
+          "cleaning contaminated soil in abandoned mining facilities using specialized plants.",
+          "subsidizing green energy companies using funds collected from corporate bankruptcy."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. 'Greenwashing' adalah praktik menyesatkan di mana korporasi membuat klaim palsu/berlebihan seolah-olah operasi mereka ramah lingkungan."
+      },
+      {
+        qNum: 24,
+        skill: "Structural Paragraph Analysis (C4)",
+        prompt: "Which point from Paragraph 3 undermines the long-term reliability of forest-based carbon offsets?",
+        options: [
+          "The lack of jobs for aviation workers in the Global South.",
+          "The risk that reforested areas may burn in wildfires, releasing stored carbon back into the atmosphere.",
+          "The inability of renewable energy projects to generate marketable carbon credits.",
+          "The requirement for third-party auditing in heavy shipping industries.",
+          "The high operational cost of manufacturing low-carbon aircraft engines."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Risiko terjadinya kebakaran hutan pada proyek reboisasi dapat melepaskan kembali karbon yang tersimpan ke atmosfer, merusak permanensi offset."
+      },
+      {
+        qNum: 25,
+        skill: "Synthesis & Policy Hierarchy (C6)",
+        prompt: "According to the author's final conclusion, what is the correct hierarchy for corporate decarbonization strategy?",
+        options: [
+          "Primary: Purchasing cheap offsets; Secondary: Expanding high-emission shipping routes.",
+          "Primary: Direct operational emission reductions; Secondary: Audited carbon offsets for residual emissions.",
+          "Primary: Relying on greenwashing PR campaigns; Secondary: Investing in wildfire insurance.",
+          "Primary: Transferring operations to the Global South; Secondary: Banning third-party audits.",
+          "Primary: Abolishing aviation fuels; Secondary: Mandatory consumer carbon allowances."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Penulis menyimpulkan hierarki utama: Reduksi emisi operasional secara langsung sebagai prioritas utama, dan offset teraudit hanya sebagai tindakan sekunder untuk emisi sisa."
+      }
+    ]
+  },
+  {
+    topicId: 6,
+    topicName: "Nuclear Energy in Decarbonization",
+    storyTitle: "Text 6 — Nuclear Energy in Decarbonization: Clean Base-load Power vs. Radioactive Risk & Capital Costs",
+    storyParagraphs: [
+      "[Issue Statement] As nations struggle to replace fossil fuels while maintaining electricity grid stability, nuclear power has re-emerged at the center of energy policy debates.",
+      "[Arguments For / Pro] Advocates emphasize that nuclear energy provides massive, zero-emission base-load power that operates independently of weather conditions—unlike solar and wind, which suffer from intermittency. Nuclear reactors generate exceptionally high energy density with minimal land footprints. Advanced Small Modular Reactors (SMRs) offer enhanced safety features and lower initial capital requirements, making nuclear power an indispensable foundation for a carbon-free grid.",
+      "[Arguments Against / Contra] Opponents, however, highlight the unresolved issue of long-term radioactive waste management and the catastrophic risks of reactor meltdowns. Furthermore, conventional nuclear power plants require immense capital investment and decade-long construction timelines, diverting precious financial resources away from rapidly deployable renewables like solar, wind, and battery storage.",
+      "[Conclusion / Recommendation] In conclusion, nuclear energy offers valuable base-load stability, but its high costs and risks mandate a balanced approach. Governments should extend existing safe plants and research SMRs while expanding renewable energy as the main driver of decarbonization."
+    ],
+    questions: [
+      {
+        qNum: 26,
+        skill: "Implicit Assumption Analysis (C4/C5)",
+        prompt: "Advocates' argument that nuclear energy is 'indispensable' implicitly assumes that ...",
+        options: [
+          "solar and wind power alone cannot guarantee continuous grid stability without massive energy storage breakthroughs.",
+          "radioactive waste can be safely eliminated using chemical neutralizing agents within months.",
+          "construction timelines for conventional nuclear plants are shorter than those for solar farms.",
+          "renewable energy technologies consume more fossil fuels during operation than nuclear plants.",
+          "Small Modular Reactors require zero financial investment from national governments."
+        ],
+        correct: "A",
+        explanation: "Pembahasan Analitis: Jawaban benar A. Klaim bahwa nuklir sangat penting mengasumsikan tersirat bahwa energi surya dan angin tidak dapat menjamin stabilitas pasokan energi secara terus-menerus karena faktor intermitensi cuaca."
+      },
+      {
+        qNum: 27,
+        skill: "Author's Tone & Perspective (C5)",
+        prompt: "The author's stance regarding the future role of nuclear energy can best be summarized as ...",
+        options: [
+          "complete rejection due to nuclear meltdown risks.",
+          "measured support as a supplementary base-load source alongside major renewable expansion.",
+          "unconditional advocacy for replacing all solar and wind farms with nuclear reactors.",
+          "indifference toward radioactive waste management technologies.",
+          "hostility toward Small Modular Reactor research."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Sikap penulis adalah dukungan terukur (measured support) di mana nuklir berperan sebagai penopang *base-load* tambahan di samping ekspansi utama energi terbarukan."
+      },
+      {
+        qNum: 28,
+        skill: "Contextual Terminology (C4)",
+        prompt: "The term “intermittency” in Paragraph 2 describes the technical limitation where renewable energy ...",
+        options: [
+          "produces excessive electrical voltage that damages residential power grids.",
+          "fluctuates in power generation depending on natural environmental factors like sunlight and wind speed.",
+          "requires permanent radioactive waste storage facilities beneath solar panels.",
+          "costs significantly more to operate than conventional coal power plants.",
+          "emits toxic greenhouse gases during periods of heavy rain."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. 'Intermittency' (ketidakpastian/intermitensi) merujuk pada fluktuasi pasokan daya energi terbarukan yang sangat bergantung pada cuaca (sinar matahari dan angin)."
+      },
+      {
+        qNum: 29,
+        skill: "Cause-and-Effect Relationship (C4)",
+        prompt: "Why do critics argue that building new conventional nuclear power plants may hinder climate goals in the short term?",
+        options: [
+          "Because nuclear reactors absorb greenhouse gases from surrounding forests.",
+          "Because long construction timelines and high capital costs tie up resources that could deploy renewables much faster.",
+          "Because Small Modular Reactors produce higher carbon emissions than coal facilities.",
+          "Because renewable energy developers refuse to work in regions with nuclear power plants.",
+          "Because nuclear power plants require massive imports of lithium and cobalt."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Paragraf 3 menjelaskan bahwa waktu pembangunan yang lama (dekade) dan biaya besar mengikat modal yang seharusnya bisa dipakai untuk memasang energi terbarukan secara jauh lebih cepat."
+      },
+      {
+        qNum: 30,
+        skill: "Policy Recommendation Synthesis (C6)",
+        prompt: "Which policy strategy best synthesizes the author's final recommendation regarding grid decarbonization?",
+        options: [
+          "Shutting down all existing nuclear plants immediately and relying exclusively on fossil-fuel backups.",
+          "Prioritizing renewable energy expansion as the primary power source while utilizing nuclear energy for base-load stability.",
+          "Redirecting all solar and wind subsidies into constructing mega-scale conventional nuclear facilities.",
+          "Banning Small Modular Reactor research to lower national electricity bills.",
+          "Exempting nuclear power plants from international safety and radioactive waste audits."
+        ],
+        correct: "B",
+        explanation: "Pembahasan Analitis: Jawaban benar B. Paragraf 4 menyimpulkan strategi terbaik: Mengutamakan energi terbarukan sebagai penggerak utama dekarbonisasi sembari memanfaatkan nuklir sebagai penstabil jaringan (*base-load*)."
+      }
+    ]
+  }
+];
+
+let currentQIndex = 0;
+let userAnswers = new Array(30).fill(null);
+let flaggedQuestions = new Set();
+let isPracticeMode = false;
+let fontScale = 1.0;
+let isDarkMode = false;
+let timerSeconds = 5400; // 90 Minutes (90 * 60 = 5400)
+let timerInterval = null;
+
+let studentProfile = {
+  name: "Siswa TKA",
+  className: "XII MIPA",
+  nisn: "006123456",
+  school: "SMAN 1 Ciracap Sukabumi"
+};
+
+// DOM References
+const landingCoverSection = document.getElementById("landingCoverSection");
+const examWorkspace = document.getElementById("examWorkspace");
+const topicNavBar = document.getElementById("topicNavBar");
+
+const storyTag = document.getElementById("storyTag");
+const storyThemeBadge = document.getElementById("storyThemeBadge");
+const storyQRange = document.getElementById("storyQRange");
+const storyTitle = document.getElementById("storyTitle");
+const storyBody = document.getElementById("storyBody");
+
+const qNumberBadge = document.getElementById("qNumberBadge");
+const skillBadge = document.getElementById("skillBadge");
+const qPrompt = document.getElementById("qPrompt");
+const qOptions = document.getElementById("qOptions");
+const feedbackBox = document.getElementById("feedbackBox");
+
+const flagBtn = document.getElementById("flagBtn");
+const flagText = document.getElementById("flagText");
+const prevQBtn = document.getElementById("prevQBtn");
+const nextQBtn = document.getElementById("nextQBtn");
+
+const paletteGrid = document.getElementById("paletteGrid");
+const progressBar = document.getElementById("progressBar");
+const answeredCount = document.getElementById("answeredCount");
+const topicPillsContainer = document.getElementById("topicPillsContainer");
+
+const modeToggleBtn = document.getElementById("modeToggleBtn");
+const modeLabel = document.getElementById("modeLabel");
+const themeToggleBtn = document.getElementById("themeToggleBtn");
+const themeIcon = document.getElementById("themeIcon");
+
+const customDialogModal = document.getElementById("customDialogModal");
+
+function getQuestionData(index) {
+  let accumulated = 0;
+  for (let t = 0; t < dataset.length; t++) {
+    const topic = dataset[t];
+    if (index < accumulated + topic.questions.length) {
+      const qInTopic = index - accumulated;
+      return {
+        topic: topic,
+        question: topic.questions[qInTopic],
+        topicIndex: t
+      };
+    }
+    accumulated += topic.questions.length;
+  }
+  return null;
+}
+
+function showLandingCover() {
+  landingCoverSection.classList.remove("hidden");
+  examWorkspace.classList.add("hidden");
+  topicNavBar.classList.add("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function handleStartExam(e) {
+  if (e) e.preventDefault();
+  
+  studentProfile.name = document.getElementById("studentNameInput").value || "Siswa TKA";
+  studentProfile.className = document.getElementById("studentClassInput").value || "XII SMA";
+  studentProfile.nisn = document.getElementById("studentNisnInput").value || "-";
+  studentProfile.school = document.getElementById("studentSchoolInput").value || "SMAN 1 Ciracap Sukabumi";
+
+  landingCoverSection.classList.add("hidden");
+  examWorkspace.classList.remove("hidden");
+  topicNavBar.classList.remove("hidden");
+
+  loadQuestion(0);
+  if (!timerInterval) startTimer();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function startPracticeDirectly() {
+  isPracticeMode = true;
+  modeLabel.innerText = "Mode: Practice";
+  handleStartExam(null);
+}
+
+function renderTopicPills() {
+  topicPillsContainer.innerHTML = "";
+  dataset.forEach((t, i) => {
+    const startQ = i * 5 + 1;
+    const endQ = startQ + 4;
+    const pill = document.createElement("button");
+    const active = getQuestionData(currentQIndex).topicIndex === i;
+    
+    pill.className = `px-3 py-1.5 rounded-xl font-semibold text-xs whitespace-nowrap transition flex items-center gap-1.5 border ${
+      active
+        ? "bg-emerald-600 text-white border-emerald-500 shadow-sm"
+        : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700"
+    }`;
+    pill.innerHTML = `<span class="w-2 h-2 rounded-full ${active ? "bg-amber-300" : "bg-emerald-500"}"></span> ${t.topicName} (${startQ}-${endQ})`;
+    pill.onclick = () => {
+      loadQuestion(i * 5);
+    };
+    topicPillsContainer.appendChild(pill);
+  });
+}
+
+function renderPalette() {
+  paletteGrid.innerHTML = "";
+  let answeredNum = 0;
+
+  for (let i = 0; i < 30; i++) {
+    const btn = document.createElement("button");
+    const isCurrent = i === currentQIndex;
+    const isAnswered = userAnswers[i] !== null;
+    const isFlagged = flaggedQuestions.has(i);
+
+    if (isAnswered) answeredNum++;
+
+    let bgClass = "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700";
+    if (isAnswered) bgClass = "bg-teal-500 text-white border-teal-600 font-bold";
+    if (isFlagged) bgClass = "bg-amber-500 text-white border-amber-600 font-bold";
+    if (isCurrent) bgClass = "ring-2 ring-emerald-500 ring-offset-2 dark:ring-offset-slate-900 bg-emerald-600 text-white font-extrabold";
+
+    btn.className = `h-9 rounded-lg border text-xs font-mono transition flex items-center justify-center relative ${bgClass}`;
+    btn.innerText = i + 1;
+
+    if (isFlagged && !isCurrent) {
+      const dot = document.createElement("span");
+      dot.className = "absolute -top-1 -right-1 w-2.5 h-2.5 bg-amber-400 rounded-full border border-white dark:border-slate-900";
+      btn.appendChild(dot);
+    }
+
+    btn.onclick = () => loadQuestion(i);
+    paletteGrid.appendChild(btn);
+  }
+
+  answeredCount.innerText = `${answeredNum} / 30 Terjawab`;
+  const pct = Math.round((answeredNum / 30) * 100);
+  progressBar.style.width = `${pct}%`;
+}
+
+function loadQuestion(index) {
+  currentQIndex = index;
+  const data = getQuestionData(index);
+  const topic = data.topic;
+  const q = data.question;
+
+  // Render Left Passage Panel
+  storyTag.innerText = `Text ${data.topicIndex + 1} of 6`;
+  storyThemeBadge.innerText = topic.topicName;
+  storyQRange.innerText = `${data.topicIndex * 5 + 1} - ${data.topicIndex * 5 + 5}`;
+  storyTitle.innerText = topic.storyTitle;
+  storyBody.innerHTML = topic.storyParagraphs.map(p => `<p class="mb-3">${p}</p>`).join("");
+
+  // Render Right Question Panel
+  qNumberBadge.innerText = `Q${q.qNum}`;
+  skillBadge.innerText = q.skill;
+  qPrompt.innerText = q.prompt;
+
+  // Options Rendering (A-E)
+  qOptions.innerHTML = "";
+  const letters = ["A", "B", "C", "D", "E"];
+  q.options.forEach((opt, optIdx) => {
+    const letter = letters[optIdx];
+    const isSelected = userAnswers[index] === letter;
+
+    const optBtn = document.createElement("button");
+    let borderStyle = "border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200";
+
+    if (isSelected) {
+      borderStyle = "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 font-semibold ring-1 ring-emerald-500";
+    }
+
+    if (isPracticeMode && isSelected) {
+      if (letter === q.correct) {
+        borderStyle = "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 font-semibold ring-1 ring-emerald-500";
+      } else {
+        borderStyle = "border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200 font-semibold ring-1 ring-rose-500";
+      }
+    }
+
+    optBtn.className = `w-full text-left p-3.5 rounded-xl border text-xs sm:text-sm transition flex items-start gap-3 ${borderStyle}`;
+    optBtn.innerHTML = `
+      <span class="w-6 h-6 rounded-lg bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 flex items-center justify-center font-bold font-mono text-xs text-slate-600 dark:text-slate-200 shrink-0 ${isSelected ? 'bg-emerald-600 border-emerald-600 text-white' : ''}">
+        ${letter}
+      </span>
+      <span class="pt-0.5 leading-relaxed">${opt}</span>
+    `;
+
+    optBtn.onclick = () => selectOption(index, letter);
+    qOptions.appendChild(optBtn);
+  });
+
+  // Flag Button status
+  if (flaggedQuestions.has(index)) {
+    flagBtn.className = "px-2.5 py-1 text-xs rounded-lg bg-amber-500 text-white font-bold transition flex items-center gap-1";
+    flagText.innerText = "Ragu-ragu";
+  } else {
+    flagBtn.className = "px-2.5 py-1 text-xs rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-amber-500 transition flex items-center gap-1";
+    flagText.innerText = "Ragu-ragu";
+  }
+
+  // Prev / Next button state
+  prevQBtn.disabled = index === 0;
+  nextQBtn.innerHTML = index === 29 ? `Selesai <i class="fa-solid fa-check-double"></i>` : `Next <i class="fa-solid fa-chevron-right"></i>`;
+
+  // Practice Mode Explanation
+  if (isPracticeMode && userAnswers[index] !== null) {
+    feedbackBox.classList.remove("hidden");
+    const isCorrect = userAnswers[index] === q.correct;
+    if (isCorrect) {
+      feedbackBox.className = "my-4 p-4 rounded-xl text-xs sm:text-sm bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200";
+      feedbackBox.innerHTML = `<strong><i class="fa-solid fa-circle-check text-emerald-500"></i> Jawaban Benar!</strong><br>${q.explanation}`;
+    } else {
+      feedbackBox.className = "my-4 p-4 rounded-xl text-xs sm:text-sm bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 text-rose-900 dark:text-rose-200";
+      feedbackBox.innerHTML = `<strong><i class="fa-solid fa-circle-xmark text-rose-500"></i> Jawaban Kurang Tepat. Kunci Jawaban: (${q.correct})</strong><br>${q.explanation}`;
+    }
+  } else {
+    feedbackBox.classList.add("hidden");
+  }
+
+  renderTopicPills();
+  renderPalette();
+}
+
+function selectOption(qIdx, letter) {
+  userAnswers[qIdx] = letter;
+  loadQuestion(qIdx);
+}
+
+prevQBtn.onclick = () => { if (currentQIndex > 0) loadQuestion(currentQIndex - 1); };
+nextQBtn.onclick = () => {
+  if (currentQIndex < 29) {
+    loadQuestion(currentQIndex + 1);
+  } else {
+    triggerFinishConfirmation();
+  }
+};
+
+flagBtn.onclick = () => {
+  if (flaggedQuestions.has(currentQIndex)) {
+    flaggedQuestions.delete(currentQIndex);
+  } else {
+    flaggedQuestions.add(currentQIndex);
+  }
+  loadQuestion(currentQIndex);
+};
+
+modeToggleBtn.onclick = () => {
+  isPracticeMode = !isPracticeMode;
+  modeLabel.innerText = isPracticeMode ? "Mode: Practice" : "Mode: Exam";
+  loadQuestion(currentQIndex);
+};
+
+document.getElementById("fontIncBtn").onclick = () => {
+  if (fontScale < 1.3) {
+    fontScale += 0.1;
+    storyBody.style.fontSize = `${fontScale * 0.875}rem`;
+  }
+};
+document.getElementById("fontDecBtn").onclick = () => {
+  if (fontScale > 0.8) {
+    fontScale -= 0.1;
+    storyBody.style.fontSize = `${fontScale * 0.875}rem`;
+  }
+};
+
+themeToggleBtn.onclick = () => {
+  isDarkMode = !isDarkMode;
+  if (isDarkMode) {
+    document.documentElement.classList.add("dark");
+    themeIcon.className = "fa-solid fa-sun text-amber-400";
+  } else {
+    document.documentElement.classList.remove("dark");
+    themeIcon.className = "fa-solid fa-moon text-slate-600";
+  }
+};
+
+document.getElementById("scrollToTopStory").onclick = () => {
+  storyBody.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    if (timerSeconds > 0) {
+      timerSeconds--;
+      const m = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+      const s = (timerSeconds % 60).toString().padStart(2, '0');
+      document.getElementById("timerDisplay").innerText = `${m}:${s}`;
+    } else {
+      clearInterval(timerInterval);
+      showCustomDialog(
+        '<i class="fa-solid fa-hourglass-end text-amber-500 text-2xl"></i>',
+        "Waktu Ujian Habis!",
+        "Waktu ujian 90 menit telah berakhir. Hasil dan jawaban Anda akan langsung dievaluasi.",
+        [
+          {
+            text: "Lihat Hasil Ujian",
+            class: "bg-emerald-600 text-white font-bold py-2 px-4 rounded-xl text-xs",
+            onClick: () => {
+              hideCustomDialog();
+              calculateResults();
+            }
+          }
+        ]
+      );
+    }
+  }, 1000);
+}
+
+function showCustomDialog(iconHTML, title, message, actionButtons) {
+  document.getElementById("dialogIconContainer").innerHTML = iconHTML;
+  document.getElementById("dialogTitle").innerText = title;
+  document.getElementById("dialogMessage").innerText = message;
+  
+  const actionsContainer = document.getElementById("dialogActions");
+  actionsContainer.innerHTML = "";
+  
+  actionButtons.forEach(btnConfig => {
+    const btn = document.createElement("button");
+    btn.className = btnConfig.class;
+    btn.innerText = btnConfig.text;
+    btn.onclick = btnConfig.onClick;
+    actionsContainer.appendChild(btn);
+  });
+
+  customDialogModal.classList.remove("hidden");
+}
+
+function hideCustomDialog() {
+  customDialogModal.classList.add("hidden");
+}
+
+function triggerFinishConfirmation() {
+  const answered = userAnswers.filter(a => a !== null).length;
+  if (answered < 30) {
+    showCustomDialog(
+      '<i class="fa-solid fa-triangle-exclamation text-amber-500 text-2xl"></i>',
+      "Ada Soal Belum Terjawab",
+      `Anda baru menjawab ${answered} dari 30 soal. Apakah Anda yakin ingin menyelesaikan ujian sekarang?`,
+      [
+        {
+          text: "Kembali Mengerjakan",
+          class: "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-xl text-xs",
+          onClick: hideCustomDialog
+        },
+        {
+          text: "Kumpulkan Jawaban",
+          class: "bg-emerald-600 text-white font-bold py-2 px-4 rounded-xl text-xs",
+          onClick: () => {
+            hideCustomDialog();
+            calculateResults();
+          }
+        }
+      ]
+    );
+  } else {
+    showCustomDialog(
+      '<i class="fa-solid fa-circle-check text-emerald-500 text-2xl"></i>',
+      "Selesaikan Ujian",
+      "Seluruh 30 soal HOTS telah dijawab! Apakah Anda ingin menyerahkan lembar jawaban?",
+      [
+        {
+          text: "Periksa Kembali",
+          class: "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-xl text-xs",
+          onClick: hideCustomDialog
+        },
+        {
+          text: "Serahkan & Lihat Hasil",
+          class: "bg-gradient-to-r from-amber-500 to-emerald-600 text-white font-extrabold py-2 px-5 rounded-xl text-xs",
+          onClick: () => {
+            hideCustomDialog();
+            calculateResults();
+          }
+        }
+      ]
+    );
+  }
+}
+
+document.getElementById("finishTestBtn").onclick = triggerFinishConfirmation;
+
+function calculateResults() {
+  let score = 0;
+  let reviewHTML = "";
+
+  for (let i = 0; i < 30; i++) {
+    const qData = getQuestionData(i);
+    const q = qData.question;
+    const userAns = userAnswers[i];
+    const isCorrect = userAns === q.correct;
+    if (isCorrect) score++;
+
+    reviewHTML += `
+      <div class="p-4 rounded-xl border ${isCorrect ? 'bg-emerald-50/50 dark:bg-emerald-950/20 border-emerald-300 dark:border-emerald-800' : 'bg-rose-50/50 dark:bg-rose-950/20 border-rose-300 dark:border-rose-800'} text-xs space-y-2">
+        <div class="flex items-center justify-between font-bold">
+          <span class="text-slate-800 dark:text-slate-200">
+            Soal ${i + 1}. (${qData.topic.topicName}) — ${q.skill}
+          </span>
+          <span class="${isCorrect ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'} uppercase font-mono">
+            ${isCorrect ? '✓ Benar' : '✕ Salah'}
+          </span>
+        </div>
+        <div class="text-slate-700 dark:text-slate-300 font-medium">
+          ${q.prompt}
+        </div>
+        <div class="text-slate-600 dark:text-slate-400">
+          Jawaban Siswa: <strong>${userAns ? userAns : 'Tidak Dijawab'}</strong> | Kunci Jawaban: <strong class="text-emerald-600 dark:text-emerald-400">${q.correct}</strong>
+        </div>
+        <div class="p-2.5 rounded bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 leading-relaxed">
+          <strong>Pembahasan Analitis:</strong> ${q.explanation}
+        </div>
+      </div>
+    `;
+  }
+
+  const pct = Math.round((score / 30) * 100);
+  document.getElementById("finalScoreVal").innerText = `${score} / 30`;
+  document.getElementById("finalPercentage").innerText = `${pct}% Akurasi`;
+
+  // Inject student information into modal
+  document.getElementById("resStudentName").innerText = studentProfile.name;
+  document.getElementById("resStudentClass").innerText = studentProfile.className;
+  document.getElementById("resStudentSchool").innerText = studentProfile.school;
+
+  let grade = "C";
+  let gradeText = "Cukup Memahami Literasi Diskusi HOTS";
+  if (pct >= 85) { grade = "A"; gradeText = "Sangat Baik! Penguasaan Analisis HOTS Sangat Tinggi"; }
+  else if (pct >= 70) { grade = "B"; gradeText = "Baik! Mampu Menganalisis Teks Diskusi Komprehensif"; }
+  else if (pct < 50) { grade = "D"; gradeText = "Perlu Latihan Intensif Literasi Bahasa Inggris"; }
+
+  document.getElementById("gradeBadge").innerText = `Grade: ${grade}`;
+  document.getElementById("gradeDesc").innerText = gradeText;
+
+  const elapsedSec = 5400 - timerSeconds;
+  const elapsedMin = Math.floor(elapsedSec / 60);
+  const elapsedS = elapsedSec % 60;
+  document.getElementById("timeTakenVal").innerText = `${elapsedMin}m ${elapsedS}s`;
+
+  document.getElementById("reviewContainer").innerHTML = reviewHTML;
+  document.getElementById("resultModal").classList.remove("hidden");
+}
+
+document.getElementById("closeModalBtn").onclick = () => {
+  document.getElementById("resultModal").classList.add("hidden");
+};
+
+document.getElementById("restartTestBtn").onclick = () => {
+  showCustomDialog(
+    '<i class="fa-solid fa-rotate-right text-emerald-500 text-2xl"></i>',
+    "Reset & Ulangi Ujian",
+    "Seluruh jawaban saat ini akan dihapus dan waktu akan dihitung ulang. Apakah Anda yakin?",
+    [
+      {
+        text: "Batal",
+        class: "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-xl text-xs",
+        onClick: hideCustomDialog
+      },
+      {
+        text: "Reset Sekarang",
+        class: "bg-rose-600 text-white font-bold py-2 px-4 rounded-xl text-xs",
+        onClick: () => {
+          hideCustomDialog();
+          userAnswers = new Array(30).fill(null);
+          flaggedQuestions.clear();
+          timerSeconds = 5400;
+          document.getElementById("resultModal").classList.add("hidden");
+          loadQuestion(0);
+        }
+      }
+    ]
+  );
+};
+
+document.getElementById("printResultBtn").onclick = () => {
+  window.print();
+};
+
+window.onload = function () {
+  showLandingCover();
+};
+</script>
+</body>
+</html>
